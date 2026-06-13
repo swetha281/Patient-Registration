@@ -1,0 +1,34 @@
+{
+  "name": "patient-registration",
+  "version": "1.0.0",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "electron": "^30.5.1",
+    "electron-builder": "^24.13.3",
+    "wait-on": "^9.0.10"
+  },
+  "build": {
+    "appId": "com.patient.app",
+    "productName": "Patient Registration",
+    "forceCodeSigning": false,
+    "win": {
+      "target": "nsis"
+    },
+    "extraResources": [
+      {
+        "from": "backend",
+        "to": "backend"
+      }
+    ],
+    "files": [
+      "electron/**/*",
+      "frontend/build/**/*",
+      "node_modules/**/*"
+    ]
+  }
+}

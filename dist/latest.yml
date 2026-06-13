@@ -1,0 +1,8 @@
+version: 1.0.0
+files:
+  - url: Patient-Registration-Setup-1.0.0.exe
+    sha512: GpuJnmq+oza01Ry21C1kpToP5UkbZuxP/to+NKNe3g0FpYSfvSRHDcHpeXL+RSsojne4y4iAUjs1RA0tWF+T8Q==
+    size: 80382363
+path: Patient-Registration-Setup-1.0.0.exe
+sha512: GpuJnmq+oza01Ry21C1kpToP5UkbZuxP/to+NKNe3g0FpYSfvSRHDcHpeXL+RSsojne4y4iAUjs1RA0tWF+T8Q==
+releaseDate: '2026-06-13T13:57:41.293Z'

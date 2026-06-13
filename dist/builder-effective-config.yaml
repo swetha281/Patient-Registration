@@ -1,0 +1,17 @@
+directories:
+  output: dist
+  buildResources: build
+appId: com.patient.app
+productName: Patient Registration
+forceCodeSigning: false
+win:
+  target: nsis
+extraResources:
+  - from: backend
+    to: backend
+files:
+  - filter:
+      - electron/**/*
+      - frontend/build/**/*
+      - node_modules/**/*
+electronVersion: 30.5.1
