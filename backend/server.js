@@ -6,12 +6,11 @@ require('dotenv').config();
 const app = express();
 
 app.use(cors({
-  origin: ['https://patient-registration-zk85.vercel.app', 'http://localhost:3000'],
-  credentials: true
+  origin: '*'
 }));
+
 app.use(express.json());
 
-// Root route
 app.get('/', (req, res) => {
   res.json({ message: 'Patient Registration API Running ✅' });
 });
