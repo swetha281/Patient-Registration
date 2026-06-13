@@ -30,7 +30,7 @@ function App() {
   useEffect(() => {
     setCurrentPage(1);
     fetchPatients(1, search);
-  }, [search]);
+  }, [search, fetchPatients]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-100 to-blue-50">
