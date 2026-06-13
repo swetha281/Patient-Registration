@@ -5,8 +5,16 @@ require('dotenv').config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: ['https://patient-registration-zk85.vercel.app', 'http://localhost:3000'],
+  credentials: true
+}));
 app.use(express.json());
+
+// Root route
+app.get('/', (req, res) => {
+  res.json({ message: 'Patient Registration API Running ✅' });
+});
 
 app.use('/api/patients', require('./routes/patients'));
 
@@ -17,12 +25,14 @@ const connectDB = async () => {
       socketTimeoutMS: 45000,
     });
     console.log('MongoDB Connected');
-    app.listen(process.env.PORT, () => {
-      console.log(`Server running on port ${process.env.PORT}`);
+    
+    const PORT = process.env.PORT || 5000;
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   } catch (err) {
     console.error('MongoDB Error:', err.message);
-    setTimeout(connectDB, 5000); 
+    setTimeout(connectDB, 5000);
   }
 };
 
