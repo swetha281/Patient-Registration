@@ -26,7 +26,8 @@ function App() {
     }
   }, [search]);
 
-  // Search change — page 1 reset
+ // Search change — page 1 reset
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     setCurrentPage(1);
     fetchPatients(1, search);
